@@ -62,4 +62,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
-
+gem 'jp_prefecture' # 都道府県コードから都道府県名を変換するgem
+gem 'jquery-rails' # RailsでjQueryを使えるようにするgem
