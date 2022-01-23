@@ -4,23 +4,29 @@
 
   <div class="field">
     <%= f.label :名前（姓） %><br />
-    <%= f.email_field :last_name, autofocus: true, autocomplete: "email" %>
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
     <%= f.label :名前（名） %><br />
-    <%= f.email_field :first_name, autofocus: true, autocomplete: "email" %>
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
     <%= f.label :フリガナ（セイ） %><br />
-    <%= f.email_field :last_name_kana, autofocus: true, autocomplete: "email" %>
+    <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
     <%= f.label :フリガナ（メイ） %><br />
-    <%= f.email_field :first_name_kana, autofocus: true, autocomplete: "email" %>
+    <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "email" %>
   </div>
+
+  <div class="field">
+    <%= f.label :メールアドレス %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
 
   <div class="field">
     <%= f.label :郵便番号（ハイフンなし） %><br>
@@ -47,11 +53,13 @@
     <%= f.text_field :other_address %>
   </div>
 
-
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :電話番号（ハイフンなし） %><br>
+    <%= f.text_field :telephone_number %>
   </div>
+
+
+
 
   <div class="field">
     <%= f.label :password %>
