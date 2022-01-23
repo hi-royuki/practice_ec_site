@@ -3,6 +3,52 @@
   <%= render "public/customers/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :名前（姓） %><br />
+    <%= f.email_field :last_name, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :名前（名） %><br />
+    <%= f.email_field :first_name, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :フリガナ（セイ） %><br />
+    <%= f.email_field :last_name_kana, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :フリガナ（メイ） %><br />
+    <%= f.email_field :first_name_kana, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :郵便番号（ハイフンなし） %><br>
+    <%= f.text_field :post_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :住所（県） %><br>
+    <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :住所（市町村） %><br>
+    <%= f.text_field :city_code %>
+  </div>
+
+   <div class="field">
+    <%= f.label :住所（番地） %><br>
+    <%= f.text_field :street %>
+  </div>
+
+  <div class="field">
+    <%= f.label :住所（アパート名） %><br>
+    <%= f.text_field :other_address %>
+  </div>
+
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
