@@ -12,10 +12,12 @@ Rails.application.routes.draw do
 # ーーーーーーここまでーーーーーー
 
 
-
 # ーーーーーー管理者側のパス設定ーーーーー
-  devise_for :admins
-
+  devise_for :admins, skip: [:registrations, :passwords, :sessions]
+  devise_scope :admins do
+    get '/admins/sign_in', to: 'admins/sessions#new', as: :new_admins_session # ログイン
+    post '/admins/sign_in', to: 'admins/sessions#create', as: :admins_session
+  end
 # ーーーーーーここまでーーーーーー
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
