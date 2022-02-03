@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  
 # ーーーーーー会員側のパス設定ーーーーー
   devise_for :customers, skip: [:registrations, :sessions, :passwords] # skipオプションで対応付けをスキップする
   devise_scope :customer do # skipしたままだと利用できない。devise_scopeメソッドでパスを任意に指定する
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   devise_for :admins, skip: [:registrations, :passwords], controllers: {
     sessions:      'admins/sessions'
   }
-
+  
 namespace :admins do
     get 'items/index'
     get 'items/new'
