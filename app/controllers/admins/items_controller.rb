@@ -1,8 +1,10 @@
 class Admins::ItemsController < ApplicationController
-  def index
-  end
+before_action :authenticate_admin!,only: [:create,:edit,:update,:index, :show, :new]
 
-  def new
+  def new 
+  end
+  
+  def index
   end
 
   def show
@@ -10,4 +12,9 @@ class Admins::ItemsController < ApplicationController
 
   def edit
   end
+  
+  def update
+  end
+  
+  
 end
