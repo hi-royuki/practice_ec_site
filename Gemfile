@@ -62,5 +62,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
-gem 'jp_prefecture' # 都道府県コードから都道府県名を変換するgem
-gem 'jquery-rails' # RailsでjQueryを使えるようにするgem
+
+ # 都道府県コードから都道府県名を変換するgem
+gem 'jp_prefecture'
+# RailsでjQueryを使えるようにするgem
+gem 'jquery-rails' 
+# 「refile」と「refile-mini_magick」を利用して、画像の投稿機能
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
