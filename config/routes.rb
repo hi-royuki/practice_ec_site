@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
 # ーーーーーー会員側のパス設定ーーーーー
   devise_for :customers, skip: [:registrations, :sessions, :passwords] # skipオプションで対応付けをスキップする
   devise_scope :customer do # skipしたままだと利用できない。devise_scopeメソッドでパスを任意に指定する
@@ -23,6 +24,12 @@ Rails.application.routes.draw do
     sessions:      'admins/sessions'
   }
 
+namespace :admins do
+    get 'items/index'
+    get 'items/new'
+    get 'items/show'
+    get 'items/edit'
+  end
 # ーーーーーーここまでーーーーーー
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
