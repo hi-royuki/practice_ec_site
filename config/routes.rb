@@ -1,15 +1,21 @@
 Rails.application.routes.draw do
 
-  
+root to: 'public/homes/tops#top'
+
 # ーーーーーー会員側のパス設定ーーーーー
-  devise_for :customers, skip: [:registrations, :sessions, :passwords] # skipオプションで対応付けをスキップする
+
+
+  devise_for :customers, skip: [:registrations, :sessions] # skipオプションで対応付けをスキップする
   devise_scope :customer do # skipしたままだと利用できない。devise_scopeメソッドでパスを任意に指定する
     get 'customers/sign_up', to: 'public/customers/registrations#new', as: :new_customer_registration # 新規登録
     post '/customers', to: 'public/customers/registrations#create', as: :customer_registration
     get '/customers/sign_in', to: 'public/customers/sessions#new', as: :new_customer_session # ログイン
     post '/customers/sign_in', to: 'public/customers/sessions#create', as: :customer_session
     delete '/customers/sign_out', to: 'piblic/customers/sessions#destroy', as: :destroy_customer_session # ログアウト
+
   end
+
+
 # ーーーーーーここまでーーーーーー
 
 
@@ -23,12 +29,9 @@ Rails.application.routes.draw do
   devise_for :admins, skip: [:registrations, :passwords], controllers: {
     sessions:      'admins/sessions'
   }
-  
+
 namespace :admins do
-    get 'items/index'
-    get 'items/new'
-    get 'items/show'
-    get 'items/edit'
+    resources :items, only: [:show, :index, :new, :create, :edit, :update]
   end
 # ーーーーーーここまでーーーーーー
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
