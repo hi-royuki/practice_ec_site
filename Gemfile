@@ -70,3 +70,7 @@ gem 'jquery-rails'
 # 「refile」と「refile-mini_magick」を利用して、画像の投稿機能
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+
+# Bootstrapを追加する
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
