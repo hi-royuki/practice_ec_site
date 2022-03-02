@@ -2,4 +2,10 @@
 <li> <%= link_to '商品追加', new_admins_item_path %></li>
 
 <% @items.each do |item| %>
+<div>
+  <%= attachment_image_tag item, :image %>
+  <p>商品名：<%= item.item_name %></p>
+  <p>説明：<%= item.introduction %></p>
+  <p>税抜価格：<%= item.no_tax_price %></p>
+</div>
 <% end %>
