@@ -14,7 +14,7 @@ root to: 'public/homes/tops#top'
     post '/customers/sign_up', to: 'public/customers/registrations#create', as: :customer_registration
     get '/customers/sign_in', to: 'public/customers/sessions#new', as: :new_customer_session # ログイン
     post '/customers/sign_in', to: 'public/customers/sessions#create', as: :customer_session
-    delete '/customers/sign_out', to: 'piblic/customers/sessions#destroy', as: :destroy_customer_session # ログアウト
+    delete '/customers/sign_out', to: 'public/customers/sessions#destroy', as: :destroy_customer_session # ログアウト
 
   end
 
