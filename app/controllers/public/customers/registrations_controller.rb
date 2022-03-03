@@ -41,9 +41,7 @@ class Public::Customers::RegistrationsController < Devise::RegistrationsControll
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:last_name, :first_name, :last_name_kana, :first_name_kana, :post_code, :prefecture_code, :city_code, :street, :other_address, :telephone_number])
-  end
+  
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
   #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
@@ -58,16 +56,16 @@ class Public::Customers::RegistrationsController < Devise::RegistrationsControll
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-  
+
   # ログイン後及びログアウト後のパス設定
   protected
-  def after_sign_in_path_for(resource)
-    admins_items_path
+  def after_sign_up_path_for(resource)
+    public_items_path
   end
 
   def after_sign_out_path_for(resource)
     new_admin_session_path
   end
-  
-  
+
+
 end

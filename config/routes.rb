@@ -8,12 +8,10 @@ Rails.application.routes.draw do
 root to: 'public/homes/tops#top'
 
 # ーーーーーー会員側のパス設定ーーーーー
-
-
   devise_for :customers, skip: [:registrations, :sessions] # skipオプションで対応付けをスキップする
   devise_scope :customer do # skipしたままだと利用できない。devise_scopeメソッドでパスを任意に指定する
     get 'customers/sign_up', to: 'public/customers/registrations#new', as: :new_customer_registration # 新規登録
-    post '/customers', to: 'public/customers/registrations#create', as: :customer_registration
+    post '/customers/sign_up', to: 'public/customers/registrations#create', as: :customer_registration
     get '/customers/sign_in', to: 'public/customers/sessions#new', as: :new_customer_session # ログイン
     post '/customers/sign_in', to: 'public/customers/sessions#create', as: :customer_session
     delete '/customers/sign_out', to: 'piblic/customers/sessions#destroy', as: :destroy_customer_session # ログアウト
