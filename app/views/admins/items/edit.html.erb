@@ -1,2 +1,9 @@
-<h1>Admins::Items#edit</h1>
-<p>Find me in app/views/admins/items/edit.html.erb</p>
+<h1>商品編集</h1>
+<%= form_with model: @item, url: admins_item_path(@item), local: true do |f| %>
+ <p>商品画像:<%= f.attachment_field :image %></p>
+ <p>商品名:<%= f.text_field :item_name %></p>
+ <p>商品説明:<%= f.text_field :introduction %></p>
+ <p>税抜価格:<%= f.text_field :no_tax_price %></p>
+ <p><%= f.submit "変更を保存" %>:<%= link_to "削除", admins_item_path(@item), method: :delete %></p>
+
+<% end %>
