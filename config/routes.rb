@@ -36,7 +36,7 @@ root to: 'public/homes/tops#top'
   }
 
 namespace :admins do
-    resources :items, only: [:show, :index, :new, :create, :edit, :update]
+    resources :items, only: [:show, :index, :new, :create, :edit, :update, :destroy]
   end
 # ーーーーーーここまでーーーーーー
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
