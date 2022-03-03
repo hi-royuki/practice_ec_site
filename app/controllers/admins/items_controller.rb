@@ -28,7 +28,7 @@ before_action :authenticate_admin!,only: [:create,:edit,:update,:index, :show, :
 
   def destroy
     @item = Item.find(params[:id])
-    @item = Item.destroy
+    @item.destroy
     redirect_to admins_items_path
 
   end
