@@ -34,14 +34,13 @@ before_action :authenticate_admin!,only: [:create,:edit,:update,:index, :show, :
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to admins_items_path
-
   end
 
 
 private
 
   def item_params
-    params.require(:item).permit(:item_name, :image, :introduction, :no_tax_price)
+    params.require(:item).permit(:item_name, :image, :introduction, :no_tax_price, :is_active)
   end
 
 end

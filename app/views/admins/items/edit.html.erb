@@ -4,6 +4,7 @@
  <p>商品名:<%= f.text_field :item_name %></p>
  <p>商品説明:<%= f.text_field :introduction %></p>
  <p>税抜価格:<%= f.text_field :no_tax_price %></p>
+ <p><%= f.select :is_active,{販売中:false, 販売停止:true} %></p>
  <p><%= f.submit "変更を保存" %>:<%= link_to "削除", admins_item_path(@item), method: :delete %></p>
 
 <% end %>
