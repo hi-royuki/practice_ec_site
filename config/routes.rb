@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :show]
     # get 'items/index'
     # get 'items/show'
+
   end
 root to: 'public/homes/tops#top'
 
@@ -41,6 +42,7 @@ root to: 'public/homes/tops#top'
 
 namespace :admins do
     resources :items, only: [:show, :index, :new, :create, :edit, :update, :destroy]
+    resources :customer, only: [:index, :show, :edit, :update]
   end
 # ーーーーーーここまでーーーーーー
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
