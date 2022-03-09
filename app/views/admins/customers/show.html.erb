@@ -1,2 +1,43 @@
-<h1>Admins::Customers#show</h1>
-<p>Find me in app/views/admins/customers/show.html.erb</p>
+<h1><%= @customer.last_name %><%= @customer.first_name %>さんの会員詳細ページ</h1>
+  <table class="table">
+
+      <tr>
+       <th class="col-xs-2">会員ID</th>
+       <td class="col-xs-10"><%= @customer.id %></td>
+      </tr>
+
+      <tr>
+       <th class="col-xs-2">氏名</th>
+       <td class="col-xs-10"><%= @customer.last_name %><%= @customer.first_name %> </td>
+      </tr>
+
+      <tr>
+       <th class="col-xs-2">フリガナ</th>
+       <td class="col-xs-10"><%= @customer.last_name_kana %><%= @customer.first_name_kana %></td>
+      </tr>
+
+      <tr>
+       <th class="col-xs-2">郵便番号</th>
+       <td class="col-xs-10"><%= @customer.post_code %></td>
+      </tr>
+
+      <tr>
+       <th class="col-xs-2">住所</th>
+       <td class="col-xs-10"><%= @customer.prefecture_code %><%= @customer.city_code %><%= @customer.street %><%= @customer.other_address %></td>
+      </tr>
+
+      <tr>
+       <th class="col-xs-2">電話番号</th>
+       <td class="col-xs-10"><%= @customer.telephone_number %></td>
+      </tr>
+
+      <tr>
+       <th class="col-xs-2">メールアドレス</th>
+       <td class="col-xs-10"><%= @customer.email %></td>
+      </tr>
+
+      <tr>
+       <th class="col-xs-2">会員ステータス</th>
+      </tr>
+
+     </table>
