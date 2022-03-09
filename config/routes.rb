@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admins do
-    get 'customers/index'
-    get 'customers/show'
-    get 'customers/edit'
-    get 'customers/update'
-  end
   namespace :public do
     resources :items, only: [:index, :show]
     # get 'items/index'
@@ -42,7 +36,7 @@ root to: 'public/homes/tops#top'
 
 namespace :admins do
     resources :items, only: [:show, :index, :new, :create, :edit, :update, :destroy]
-    resources :customer, only: [:index, :show, :edit, :update]
+    resources :customers, only: [:index, :show, :edit, :update]
   end
 # ーーーーーーここまでーーーーーー
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
