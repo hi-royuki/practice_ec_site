@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :public do
+    get 'customers/show'
+    get 'customers/edit'
+  end
+  namespace :public do
     resources :items, only: [:index, :show]
     # get 'items/index'
     # get 'items/show'
