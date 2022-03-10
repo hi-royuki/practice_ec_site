@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
 
   namespace :public do
-    get 'addresses/index'
-    get 'addresses/show'
-    get 'addresses/edit'
-  end
-  namespace :public do
-    get 'customers/show'
-    get 'customers/edit'
-  end
-  namespace :public do
     resources :items, only: [:index, :show]
+
+    resource :customers, only: [:show, :edit, :update] do
+      collection do
+        get 'withdraw'
+        patch 'unsubscribe'
+      end
+    end
+
+    resources :addresses, only: [:index, :edit, :create, :update, :destroy]
+
     # get 'items/index'
     # get 'items/show'
 
