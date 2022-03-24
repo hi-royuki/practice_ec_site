@@ -21,6 +21,15 @@ class Public::CustomersController < ApplicationController
   end
 
   def withdrawal
+    @customer = current_customer
+  end
+
+  def unsubscribe
+    @customer = current_customer
+    @customer.update(is_active: false)
+    reset_session # ログアウトさせる
+    flash[:notice] = "ありがとうございました。又のご利用を心よりお待ちしております。"
+    redirect_to root_path
   end
 
  private

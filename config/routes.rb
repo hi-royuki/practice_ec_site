@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
+# ーーーーーー会員側のパス設定ーーー
   namespace :public do
     resources :items, only: [:index, :show]
 
     resource :customers, only: [:show, :edit, :update] do
       collection do
-        get 'withdraw'
+        get 'withdrawal'
         patch 'unsubscribe'
       end
     end
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
   end
 root to: 'public/homes/tops#top'
 
-# ーーーーーー会員側のパス設定ーーーーー
+
   devise_for :customers, skip: [:registrations, :sessions] # skipオプションで対応付けをスキップする
   devise_scope :customer do # skipしたままだと利用できない。devise_scopeメソッドでパスを任意に指定する
     get 'customers/sign_up', to: 'public/customers/registrations#new', as: :new_customer_registration # 新規登録

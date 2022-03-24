@@ -18,4 +18,8 @@ class Customer < ApplicationRecord
   #   customer.last_name + customer.first_name
   # end
 
+  def active_for_authentication?
+    super && (self.is_active == true)
+  end
+
 end
